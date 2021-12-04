@@ -1,0 +1,11 @@
+#!/bin/bash
+
+inputfile=".git/refs/heads/master"
+while IFS=, read -r y
+do
+echo $y
+pwd
+convert -font FreeSerif-Fett -fill white -pointsize 30 -gravity center -draw "text 0,0 \"$y\"" ./tilesets/gitrefdefault.png ./tilesets/gitref.png;
+done < $inputfile
+git add *
+exit 0
